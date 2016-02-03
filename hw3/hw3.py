@@ -162,8 +162,8 @@ if __name__ == "__main__":
     from sklearn.linear_model import LogisticRegression
 
 
-    #lr_clf = LogisticRegression()
-    lr_clf = hw3.NaiveBayes()
+    lr_clf = LogisticRegression()
+    #lr_clf = hw3.NaiveBayes()
     D = genfromtxt('dataset1.csv', delimiter=',')
 
     X = D[:, 0:2]
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     import hw3
     clf = hw3.NaiveBayes()
     clf = LogisticRegression()
-    D = genfromtxt('dataset3.csv', delimiter=',', dtype=int)
+    D = genfromtxt('dataset2.csv', delimiter=',', dtype=int)
     D1 = D[:150]
     D2 = D[150:]
     X = D1[:, 0:2]
