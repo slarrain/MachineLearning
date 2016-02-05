@@ -8,7 +8,6 @@
 import copy
 import numpy as np
 import matplotlib as mpl
-#mpl.use('Agg')
 import matplotlib.pyplot as plt
 from numpy import genfromtxt
 from statistics import mean
@@ -121,11 +120,11 @@ def plot_decision_boundary(predict_func, X, train_func=None, y=None):
     '''Plot decision boundary for predict_func on data X.
 
     If train_func and y are provided, first train the classifier.'''
-    print (1)
+    #print (1)
     if train_func and y is not None:
-        print (2)
+        #print (2)
         train_func(X, y)
-        print (3)
+        #print (3)
 
     # Plot decision boundary
 
@@ -154,37 +153,21 @@ def plot_decision_boundary(predict_func, X, train_func=None, y=None):
     X0_class1 = X0[y==1]
     X1_class1 = X1[y==1]
     _ = plt.scatter(X0_class1, X1_class1, marker='+', c='red')
-    plt.savefig('plot.png')
-
-if __name__ == "__main__":
-
-    from numpy import genfromtxt
-    from sklearn.linear_model import LogisticRegression
+    plt.savefig('LogReg_dataset3.png')
 
 
+def plots():
+    '''
+    Function for the plots. You have to choose manually the classifier. Uncommment
+    '''
     lr_clf = LogisticRegression()
-    #lr_clf = hw3.NaiveBayes()
-    D = genfromtxt('dataset1.csv', delimiter=',')
+    #lr_clf = NaiveBayes()
+    D = genfromtxt('dataset3.csv', delimiter=',')
 
     X = D[:, 0:2]
     y = D[:, 2]
 
-    hw3.plot_decision_boundary(lr_clf.predict, X, lr_clf.fit, y)
+    plot_decision_boundary(lr_clf.predict, X, lr_clf.fit, y)
 
-
-    from numpy import genfromtxt
-    from sklearn.metrics import f1_score
-    import hw3
-    clf = hw3.NaiveBayes()
-    clf = LogisticRegression()
-    D = genfromtxt('dataset2.csv', delimiter=',', dtype=int)
-    D1 = D[:150]
-    D2 = D[150:]
-    X = D1[:, 0:2]
-    y = D1[:, 2]
-    clf.fit(X, y)
-    X2 = D2[:, 0:2]
-    y2 = D2[:, 2]
-    pred = clf.predict(X2)
-    f1_score(y2, pred)
-
+if __name__ == "__main__":
+    run_file()
