@@ -23,7 +23,7 @@ def read():
     return df_justice_all, facts
 
 def tfvecto(list_of_facts, x=1):
-    tfvec = TfidfVectorizer(analyzer='word', stop_words=stopwords.words('english'), ngram_range=(x, x))
+    tfvec = TfidfVectorizer(analyzer='word', stop_words=stopwords.words('english'), ngram_range=(1, x))
     X = tfvec.fit_transform(list_of_facts)
     return X
 
@@ -45,6 +45,7 @@ def run(n=0, bigram=False):
     if (n==1 or n==2):
         cross_v(X, cur_df)
         return
+
     # Facts + variables case
 
     X_array = X.toarray()
@@ -58,7 +59,9 @@ def run(n=0, bigram=False):
     x = df.ix[:,df.columns != 'direction']
     # x = df.ix[:, [col for col in df.columns if col not in train_cols+['direction']]]
     # x = df.ix[:, train_cols]
-    cross_v(x, df)
+    rv = cross_v(x, df)
+    return rv
+    # cross_v(x, df)
 
 def cross_v(X, cur_df):
 
@@ -67,7 +70,7 @@ def cross_v(X, cur_df):
     scores = 0
     baselines = 0
     for train, test in kf:
-        score, base = model(X, cur_df, train, test)
+        score, base, pred = model(X, cur_df, train, test)
         # if scores:
         #     for i in range(len(score)):
         #         scores[i] += score[i]
@@ -75,6 +78,7 @@ def cross_v(X, cur_df):
         #     scores = score
         scores += score
         baselines += base
+        cur_df.loc[test,['predicted']] = pred
         #cur_df.predicted[test] = pred
     # for score in socores:
     #     s = score/5
@@ -83,6 +87,8 @@ def cross_v(X, cur_df):
     baselines = baselines/5
     print ('Score of CLF = ', scores)
     print ("Baseline of = ", baselines)
+    rv_cols = ['predicted', 'direction', 'justiceName', 'issueArea']
+    return cur_df.loc[:,rv_cols]
 
 
 
@@ -120,7 +126,7 @@ def model (X, cur_df, train, test):
     print("Time: %0.3fs" % (time() - t0))
     print ('---------------')
 
-    return score, baseline
+    return score, baseline, y
 if __name__ == '__main__':
     n = 0
     # Cases:
@@ -128,15 +134,8 @@ if __name__ == '__main__':
     # n=1 = Sparse Matrix Unigram
     # n=2 Sparse Matrix bigram
     # n>3 DF Bigram
-    
+
     if len(sys.argv) == 2:
         n = sys.argv[1]
         # n=1 is use the Sparse Matrix only. No n is use the DataFrame
-    run(int(n))
-    '''
-    vect= CountVectorizer()
-    X = vect.fit_transform(df_facts['facts_of_the_case'].values)
-    word_counts =pd.DataFrame(X.todense(),columns = vect.get_feature_names()).T.sum(axis=1)
-    word_counts.sort(ascending=False)
-    word_counts[:3]
-    '''
+    rv = run(int(n))
