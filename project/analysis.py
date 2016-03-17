@@ -51,7 +51,7 @@ def run(n=0, bigram=False):
     X_array = X.toarray()
     facts_df = pd.DataFrame(X_array)
 
-    df = pd.concat([cur_df[train_cols+['direction']], facts_df], axis=1)
+    df = pd.concat([cur_df[train_cols+['direction', 'justiceName']], facts_df], axis=1)
     # print ('Len with nulls: ',len(df))
     df = df[df.notnull().all(axis=1)].reset_index()
     # print ('Len with no Nulls: ', len(df))
@@ -59,8 +59,11 @@ def run(n=0, bigram=False):
     x = df.ix[:,df.columns != 'direction']
     # x = df.ix[:, [col for col in df.columns if col not in train_cols+['direction']]]
     # x = df.ix[:, train_cols]
+
+    x = pd.get_dummies(x)
+    #x = x.ix[:, x.columns != 'justiceName']
     rv = cross_v(x, df)
-    return rv
+    #return rv
     # cross_v(x, df)
 
 def cross_v(X, cur_df):
@@ -88,7 +91,7 @@ def cross_v(X, cur_df):
     print ('Score of CLF = ', scores)
     print ("Baseline of = ", baselines)
     rv_cols = ['predicted', 'direction', 'justiceName', 'issueArea']
-    return cur_df.loc[:,rv_cols]
+    #return cur_df.loc[:,rv_cols]
 
 
 
