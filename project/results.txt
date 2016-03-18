@@ -669,6 +669,12 @@ Time: 205.198s
 Score of CLF =  0.768758140195
 Baseline of =  0.545843666508
 
+Score of CLF =  0.813594395123
+Baseline of =  0.545842958858
+
+Score of CLF =  0.820152689798
+Baseline of =  0.54584285271
+
 2
 Random forest
 Unigram
@@ -775,9 +781,12 @@ Baseline of =  0.544138952032
 
 4
 Random forest
-bigram
+Unigram + bigram
 Facts + columns
 No Nulls
+
+Score of CLF =  0.764133041168
+Baseline of =  0.545844409542
 
 5
 Random forest
@@ -811,3 +820,61 @@ Time: 0.544s
 ---------------
 Score of CLF =  0.737802135902
 Baseline of =  0.545845400253
+
+
+
+Fitting model...
+Score:  0.808242220353
+Baseline:  0.548780487805
+Time: 281.055s
+---------------
+Fitting model...
+Score:  0.821698906644
+Baseline:  0.556349873844
+Time: 254.170s
+---------------
+Fitting model...
+Score:  0.800672834315
+Baseline:  0.551303616484
+Time: 242.189s
+---------------
+Fitting model...
+Score:  0.810265039966
+Baseline:  0.536811106437
+Time: 274.283s
+---------------
+Fitting model...
+Score:  0.827092974337
+Baseline:  0.535969709718
+Time: 254.387s
+---------------
+Score of CLF =  0.813594395123
+Baseline of =  0.545842958858
+
+Fitting model...
+Score:  0.832632464256
+Baseline:  0.551724137931
+Time: 279.794s
+---------------
+Fitting model...
+Score:  0.828847771236
+Baseline:  0.563919259882
+Time: 281.254s
+---------------
+Fitting model...
+Score:  0.823801513877
+Baseline:  0.542052144659
+Time: 266.008s
+---------------
+Fitting model...
+Score:  0.814472023559
+Baseline:  0.549432057215
+Time: 266.644s
+---------------
+Fitting model...
+Score:  0.801009676062
+Baseline:  0.522086663862
+Time: 271.914s
+---------------
+Score of CLF =  0.820152689798
+Baseline of =  0.54584285271
