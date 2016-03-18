@@ -42,7 +42,7 @@ def run(n=0, bigram=False):
     else:
         X = tfvecto(cur_df.facts_of_the_case)
 
-    if (n==1 or n==2):
+    if (n==2):
         cross_v(X, cur_df)
         return
 
@@ -51,20 +51,21 @@ def run(n=0, bigram=False):
     X_array = X.toarray()
     facts_df = pd.DataFrame(X_array)
 
-    df = pd.concat([cur_df[train_cols+['direction', 'justiceName']], facts_df], axis=1)
+    #df = pd.concat([cur_df[train_cols+['direction', 'justiceName']], facts_df], axis=1)
+    df = pd.concat([cur_df[['direction', 'justiceName']], facts_df], axis=1)
     # print ('Len with nulls: ',len(df))
     df = df[df.notnull().all(axis=1)].reset_index()
     # print ('Len with no Nulls: ', len(df))
     # df = df[df.notnull().all(axis=1)==False].reset_index()
     x = df.ix[:,df.columns != 'direction']
     # x = df.ix[:, [col for col in df.columns if col not in train_cols+['direction']]]
-    # x = df.ix[:, train_cols]
+    # x = df.ix[:, train_cols+['justiceName']]
 
     x = pd.get_dummies(x)
     #x = x.ix[:, x.columns != 'justiceName']
-    rv = cross_v(x, df)
+    #rv = cross_v(x, df)
     #return rv
-    # cross_v(x, df)
+    cross_v(x, df)
 
 def cross_v(X, cur_df):
 
