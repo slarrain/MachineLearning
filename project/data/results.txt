@@ -1,0 +1,880 @@
+Nearest neighbor
+
+Fitting model...
+Predicting
+Score:  0.682977833542
+Time: 3.429s
+---------------
+Fitting model...
+Predicting
+Score:  0.701255230126
+Time: 3.225s
+---------------
+Fitting model...
+Predicting
+Score:  0.67949790795
+Time: 3.251s
+---------------
+Fitting model...
+Predicting
+Score:  0.698326359833
+Time: 3.259s
+---------------
+Fitting model...
+Predicting
+Score:  0.698326359833
+Time: 3.254s
+---------------
+Score of CLF =  0.692076738257
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Traceback (most recent call last):
+  File "analysis.py", line 81, in <module>
+    run()
+  File "analysis.py", line 36, in run
+    cross_v(X, cur_df)
+  File "analysis.py", line 44, in cross_v
+    score, pred = model(X, cur_df, train, test)
+  File "analysis.py", line 65, in model
+    model_SVC = LinearSVC(n_jobs=-2)
+NameError: name 'LinearSVC' is not defined
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Traceback (most recent call last):
+  File "analysis.py", line 82, in <module>
+    run()
+  File "analysis.py", line 37, in run
+    cross_v(X, cur_df)
+  File "analysis.py", line 45, in cross_v
+    score, pred = model(X, cur_df, train, test)
+  File "analysis.py", line 66, in model
+    model_SVC = LinearSVC(n_jobs=-2)
+TypeError: __init__() got an unexpected keyword argument 'n_jobs'
+
+Linear svc
+
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Fitting model...
+Predicting
+Score:  0.75156838143
+Time: 0.174s
+---------------
+Fitting model...
+Predicting
+Score:  0.736820083682
+Time: 0.175s
+---------------
+Fitting model...
+Predicting
+Score:  0.761506276151
+Time: 0.178s
+---------------
+Fitting model...
+Predicting
+Score:  0.74309623431
+Time: 0.181s
+---------------
+Fitting model...
+Predicting
+Score:  0.753138075314
+Time: 0.173s
+---------------
+Score of CLF =  0.749225810177
+
+Logistic Regression
+
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Fitting model...
+Predicting
+Score:  0.736930154747
+Time: 0.085s
+---------------
+Fitting model...
+Predicting
+Score:  0.753556485356
+Time: 0.105s
+---------------
+Fitting model...
+Predicting
+Score:  0.731380753138
+Time: 0.160s
+---------------
+Fitting model...
+Predicting
+Score:  0.723849372385
+Time: 0.100s
+---------------
+Fitting model...
+Predicting
+Score:  0.747280334728
+Time: 0.083s
+---------------
+Score of CLF =  0.738599420071
+
+RF - parameters
+
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Fitting model...
+Predicting
+Score:  0.750731911334
+Time: 55.647s
+---------------
+Fitting model...
+Predicting
+Score:  0.729288702929
+Time: 54.146s
+---------------
+Fitting model...
+Predicting
+Score:  0.754393305439
+Time: 52.958s
+---------------
+Fitting model...
+Predicting
+Score:  0.742677824268
+Time: 52.859s
+---------------
+Fitting model...
+Predicting
+Score:  0.747280334728
+Time: 53.340s
+---------------
+Score of CLF =  0.74487441574
+
+RF - parameters
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Fitting model...
+Predicting
+Score:  0.746549560853
+Time: 59.660s
+---------------
+Fitting model...
+Predicting
+Score:  0.738912133891
+Time: 61.775s
+---------------
+Fitting model...
+Predicting
+Score:  0.738075313808
+Time: 63.655s
+---------------
+Fitting model...
+Predicting
+Score:  0.746861924686
+Time: 63.271s
+---------------
+Fitting model...
+Predicting
+Score:  0.745606694561
+Time: 63.563s
+---------------
+Score of CLF =  0.74320112556
+
+RF - parameters = 400 trees
+
+santiago@linux-htpc:~/github/MachineLearning/project$ python3 analysis.py
+Fitting model...
+Predicting
+Score:  0.746131325805
+Time: 215.248s
+---------------
+Fitting model...
+Predicting
+Score:  0.750209205021
+Time: 219.396s
+---------------
+Fitting model...
+Predicting
+Score:  0.743933054393
+Time: 218.198s
+---------------
+Fitting model...
+Predicting
+Score:  0.755648535565
+Time: 216.994s
+---------------
+Fitting model...
+Predicting
+Score:  0.7589958159
+Time: 218.806s
+---------------
+Score of CLF =  0.750983587337
+
+======== train cols + facts ========
+
+RF -
+
+Fitting model...
+Predicting
+Score:  0.763666947014
+Time: 199.106s
+---------------
+Fitting model...
+Predicting
+Score:  0.763666947014
+Time: 201.692s
+---------------
+Fitting model...
+Predicting
+Score:  0.756518082422
+Time: 204.727s
+---------------
+Fitting model...
+Predicting
+Score:  0.771981489272
+Time: 214.175s
+---------------
+Fitting model...
+Predicting
+Score:  0.769457299117
+Time: 219.344s
+---------------
+Score of CLF =  0.765058152968
+
+
+Linear svc
+
+Fitting model...
+Predicting
+Score:  0.567283431455
+Time: 10.516s
+---------------
+Fitting model...
+Predicting
+Score:  0.523969722456
+Time: 7.700s
+---------------
+Fitting model...
+Predicting
+Score:  0.445752733389
+Time: 7.377s
+---------------
+Fitting model...
+Predicting
+Score:  0.542280185107
+Time: 7.408s
+---------------
+Fitting model...
+Predicting
+Score:  0.541438788389
+Time: 7.408s
+---------------
+Score of CLF =  0.524144972159
+
+Logistic Regression
+
+Fitting model...
+Predicting
+Score:  0.605971404542
+Time: 7.172s
+---------------
+Fitting model...
+Predicting
+Score:  0.59377628259
+Time: 4.644s
+---------------
+Fitting model...
+Predicting
+Score:  0.578637510513
+Time: 4.448s
+---------------
+Fitting model...
+Predicting
+Score:  0.603281447202
+Time: 4.557s
+---------------
+Fitting model...
+Predicting
+Score:  0.607488430795
+Time: 4.613s
+---------------
+Score of CLF =  0.597831015129
+
+K nearest neighbor
+
+Fitting model...
+Predicting
+Score:  0.69007569386
+Time: 26.722s
+---------------
+Fitting model...
+Predicting
+Score:  0.682085786375
+Time: 24.918s
+---------------
+Fitting model...
+Predicting
+Score:  0.698486122792
+Time: 24.828s
+---------------
+Fitting model...
+Predicting
+Score:  0.694152292806
+Time: 24.941s
+---------------
+Fitting model...
+Predicting
+Score:  0.711400925536
+Time: 24.828s
+---------------
+Score of CLF =  0.695240164274
+
+RF
+
+Fitting model...
+Predicting
+Score:  0.771236333053
+Time: 198.463s
+---------------
+Fitting model...
+Predicting
+Score:  0.759882253995
+Time: 219.810s
+---------------
+Fitting model...
+Predicting
+Score:  0.764087468461
+Time: 207.564s
+---------------
+Fitting model...
+Predicting
+Score:  0.75557425326
+Time: 190.941s
+---------------
+Fitting model...
+Predicting
+Score:  0.756836348338
+Time: 207.770s
+---------------
+Score of CLF =  0.761523331421
+
+Sparse Matrix but as DF
+
+Fitting model...
+Score:  0.733584274362
+Time: 1226.650s
+---------------
+Fitting model...
+Score:  0.741841004184
+Time: 1028.053s
+---------------
+Fitting model...
+Score:  0.752719665272
+Time: 1124.545s
+---------------
+Fitting model...
+Score:  0.745606694561
+Time: 1197.147s
+---------------
+Fitting model...
+Score:  0.743933054393
+Time: 1073.655s
+---------------
+Score of CLF =  0.743536938554
+
+
+ONLY COLUMS TRAINED
+
+Fitting model...
+Score:  0.752733389403
+Time: 0.557s
+---------------
+Fitting model...
+Score:  0.746425567704
+Time: 0.540s
+---------------
+Fitting model...
+Score:  0.743061396131
+Time: 0.540s
+---------------
+Fitting model...
+Score:  0.726125368111
+Time: 0.541s
+---------------
+Fitting model...
+Score:  0.749263777871
+Time: 0.543s
+---------------
+Score of CLF =  0.743521899844
+
+
+ORIGINAL
+
+Fitting model...
+Score:  0.753241321623
+Time: 59.192s
+---------------
+Fitting model...
+Score:  0.741841004184
+Time: 61.463s
+---------------
+Fitting model...
+Score:  0.744351464435
+Time: 61.758s
+---------------
+Fitting model...
+Score:  0.754393305439
+Time: 62.276s
+---------------
+Fitting model...
+Score:  0.745188284519
+Time: 62.389s
+---------------
+Score of CLF =  0.74780307604
+
+
+Case1:
+SVC with sparse matrix alone
+
+Fitting model...
+Score:  0.749058971142
+Score2:  0.749058971142
+Time: 0.173s
+---------------
+Fitting model...
+Score:  0.743514644351
+Score2:  0.743514644351
+Time: 0.170s
+---------------
+Fitting model...
+Score:  0.741841004184
+Score2:  0.741841004184
+Time: 0.167s
+---------------
+Fitting model...
+Score:  0.754393305439
+Score2:  0.754393305439
+Time: 0.171s
+---------------
+Fitting model...
+Score:  0.748953974895
+Score2:  0.748953974895
+Time: 0.170s
+---------------
+Score of CLF =  0.747552380002
+
+Case2:
+Sparse Matrix alone but as DataFrame
+Results, as expected are almost the same
+Fitting model...
+Score:  0.736930154747
+Score2:  0.736930154747
+Time: 1.148s
+---------------
+Fitting model...
+Score:  0.745606694561
+Score2:  0.745606694561
+Time: 1.151s
+---------------
+Fitting model...
+Score:  0.765271966527
+Score2:  0.765271966527
+Time: 1.145s
+---------------
+Fitting model...
+Score:  0.745188284519
+Score2:  0.745188284519
+Time: 1.149s
+---------------
+Fitting model...
+Score:  0.743933054393
+Score2:  0.743933054393
+Time: 1.149s
+---------------
+Score of CLF =  0.747386030949
+
+Case3:
+SVC with all columns and no Nulls
+Fitting model...
+Score:  0.44196804037
+Score2:  0.44196804037
+Time: 11.927s
+---------------
+Fitting model...
+Score:  0.53574432296
+Score2:  0.53574432296
+Time: 7.681s
+---------------
+Fitting model...
+Score:  0.480656013457
+Score2:  0.480656013457
+Time: 7.387s
+---------------
+Fitting model...
+Score:  0.557004627682
+Score2:  0.557004627682
+Time: 7.342s
+---------------
+Fitting model...
+Score:  0.535969709718
+Score2:  0.535969709718
+Time: 7.355s
+---------------
+Score of CLF =  0.510268542837
+
+Case4:
+SVC with only Sparse Matrix as DF but with no NULLS
+
+Fitting model...
+Score:  0.460050462574
+Score2:  0.460050462574
+Time: 10.168s
+---------------
+Fitting model...
+Score:  0.550042052145
+Score2:  0.550042052145
+Time: 7.791s
+---------------
+Fitting model...
+Score:  0.538687973087
+Score2:  0.538687973087
+Time: 7.260s
+---------------
+Fitting model...
+Score:  0.547749263778
+Score2:  0.547749263778
+Time: 7.243s
+---------------
+Fitting model...
+Score:  0.544804375263
+Score2:  0.544804375263
+Time: 7.307s
+---------------
+Score of CLF =  0.528266825369
+
+Case5:
+SVC with only train cols (No Sparse Matrix) and No NULLS
+
+Fitting model...
+Score:  0.463414634146
+Score2:  0.463414634146
+Time: 0.442s
+---------------
+Fitting model...
+Score:  0.457947855341
+Score2:  0.457947855341
+Time: 0.436s
+---------------
+Fitting model...
+Score:  0.553406223717
+Score2:  0.553406223717
+Time: 0.451s
+---------------
+Fitting model...
+Score:  0.533866217922
+Score2:  0.533866217922
+Time: 0.443s
+---------------
+Fitting model...
+Score:  0.555742532604
+Score2:  0.555742532604
+Time: 0.453s
+---------------
+Score of CLF =  0.512875492746
+
+Just the NULLs with sparse Matrix
+
+Len with nulls:  11951
+Fitting model...
+Score:  0.307692307692
+Score2:  0.307692307692
+Time: 0.018s
+---------------
+Fitting model...
+Score:  0.615384615385
+Score2:  0.615384615385
+Time: 0.016s
+---------------
+Fitting model...
+Score:  0.615384615385
+Score2:  0.615384615385
+Time: 0.018s
+---------------
+Fitting model...
+Score:  0.916666666667
+Score2:  0.916666666667
+Time: 0.017s
+---------------
+Fitting model...
+Score:  0.5
+Score2:  0.5
+Time: 0.016s
+---------------
+Score of CLF =  0.591025641026
+
+
+Linear SVC for facts+cols and baseline
+No Nulls
+
+Fitting model...
+Score:  0.512195121951
+Baseline:  0.53826745164
+Time: 10.998s
+---------------
+Fitting model...
+Score:  0.474348191758
+Baseline:  0.526492851135
+Time: 7.553s
+---------------
+Fitting model...
+Score:  0.528595458368
+Baseline:  0.545836837679
+Time: 7.361s
+---------------
+Fitting model...
+Score:  0.437526293647
+Baseline:  0.573411863694
+Time: 7.553s
+---------------
+Fitting model...
+Score:  0.527555742533
+Baseline:  0.545225073622
+Time: 7.540s
+---------------
+Score of CLF =  0.496044161651
+Baseline of =  0.545846815554
+
+
+======== RESULTS ======
+
+1
+Random forest
+Unigram
+Facts + columns
+No Nulls
+
+Fitting model...
+Score:  0.755677039529
+Baseline:  0.553826745164
+Time: 200.417s
+---------------
+Fitting model...
+Score:  0.770815811606
+Baseline:  0.550883095038
+Time: 202.137s
+---------------
+Fitting model...
+Score:  0.783010933558
+Baseline:  0.543313708999
+Time: 198.508s
+---------------
+Fitting model...
+Score:  0.773664282709
+Baseline:  0.547328565419
+Time: 199.123s
+---------------
+Fitting model...
+Score:  0.760622633572
+Baseline:  0.533866217922
+Time: 205.198s
+---------------
+Score of CLF =  0.768758140195
+Baseline of =  0.545843666508
+
+Score of CLF =  0.813594395123
+Baseline of =  0.545842958858
+
+Score of CLF =  0.820152689798
+Baseline of =  0.54584285271
+
+2
+Random forest
+Unigram
+Facts alone (Sparse Matrix)
+Yes Nulls
+
+Fitting model...
+Score:  0.752404851527
+Baseline:  0.538268506901
+Time: 61.158s
+---------------
+Fitting model...
+Score:  0.743933054393
+Baseline:  0.53640167364
+Time: 63.758s
+---------------
+Fitting model...
+Score:  0.733054393305
+Baseline:  0.549372384937
+Time: 62.365s
+---------------
+Fitting model...
+Score:  0.744351464435
+Baseline:  0.546861924686
+Time: 60.579s
+---------------
+Fitting model...
+Score:  0.746025104603
+Baseline:  0.549790794979
+Time: 62.489s
+---------------
+Score of CLF =  0.743953773653
+Baseline of =  0.544139057029
+
+
+3
+Random forest
+bigram
+Facts alone (Sparse Matrix)
+Yes Nulls
+
+Fitting model...
+Score:  0.751986616478
+Baseline:  0.532413216228
+Time: 238.605s
+---------------
+Fitting model...
+Score:  0.733891213389
+Baseline:  0.5410041841
+Time: 223.790s
+---------------
+Fitting model...
+Score:  0.740167364017
+Baseline:  0.552719665272
+Time: 221.395s
+---------------
+Fitting model...
+Score:  0.753974895397
+Baseline:  0.537238493724
+Time: 223.186s
+---------------
+Fitting model...
+Score:  0.754393305439
+Baseline:  0.557322175732
+Time: 221.469s
+---------------
+Score of CLF =  0.746882678944
+Baseline of =  0.544139547011
+
+3.5
+Random forest
+bigram + unigram
+Facts alone (Sparse Matrix)
+Yes Nulls
+
+Fitting model...
+Score:  0.761606022585
+Baseline:  0.539523212045
+Time: 240.422s
+---------------
+Fitting model...
+Score:  0.750209205021
+Baseline:  0.528033472803
+Time: 250.016s
+---------------
+Fitting model...
+Score:  0.758158995816
+Baseline:  0.562761506276
+Time: 239.909s
+---------------
+Fitting model...
+Score:  0.726359832636
+Baseline:  0.551882845188
+Time: 238.404s
+---------------
+Fitting model...
+Score:  0.750209205021
+Baseline:  0.538493723849
+Time: 243.035s
+---------------
+Score of CLF =  0.749308652216
+Baseline of =  0.544138952032
+
+
+4
+Random forest
+Unigram + bigram
+Facts + columns
+No Nulls
+
+Score of CLF =  0.764133041168
+Baseline of =  0.545844409542
+
+5
+Random forest
+Only columns
+No Nulls
+
+Fitting model...
+Score:  0.74936921783
+Baseline:  0.540370058873
+Time: 0.555s
+---------------
+Fitting model...
+Score:  0.738856181665
+Baseline:  0.554247266611
+Time: 0.547s
+---------------
+Fitting model...
+Score:  0.73338940286
+Baseline:  0.532800672834
+Time: 0.546s
+---------------
+Fitting model...
+Score:  0.735801430374
+Baseline:  0.536390408077
+Time: 0.545s
+---------------
+Fitting model...
+Score:  0.731594446782
+Baseline:  0.565418594867
+Time: 0.544s
+---------------
+Score of CLF =  0.737802135902
+Baseline of =  0.545845400253
+
+
+
+Fitting model...
+Score:  0.808242220353
+Baseline:  0.548780487805
+Time: 281.055s
+---------------
+Fitting model...
+Score:  0.821698906644
+Baseline:  0.556349873844
+Time: 254.170s
+---------------
+Fitting model...
+Score:  0.800672834315
+Baseline:  0.551303616484
+Time: 242.189s
+---------------
+Fitting model...
+Score:  0.810265039966
+Baseline:  0.536811106437
+Time: 274.283s
+---------------
+Fitting model...
+Score:  0.827092974337
+Baseline:  0.535969709718
+Time: 254.387s
+---------------
+Score of CLF =  0.813594395123
+Baseline of =  0.545842958858
+
+Fitting model...
+Score:  0.832632464256
+Baseline:  0.551724137931
+Time: 279.794s
+---------------
+Fitting model...
+Score:  0.828847771236
+Baseline:  0.563919259882
+Time: 281.254s
+---------------
+Fitting model...
+Score:  0.823801513877
+Baseline:  0.542052144659
+Time: 266.008s
+---------------
+Fitting model...
+Score:  0.814472023559
+Baseline:  0.549432057215
+Time: 266.644s
+---------------
+Fitting model...
+Score:  0.801009676062
+Baseline:  0.522086663862
+Time: 271.914s
+---------------
+Score of CLF =  0.820152689798
+Baseline of =  0.54584285271

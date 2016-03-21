@@ -1,3 +1,8 @@
+#
+# Natnaell Mammo
+# Santiago Larrain
+#
+
 import urllib
 import pandas as pd
 import sys
@@ -13,6 +18,7 @@ from sklearn.svm import LinearSVC
 from sklearn import cross_validation
 from time import time
 from sklearn.metrics import recall_score,precision_score,accuracy_score
+from scipy import sparse
 
 judges = ['AScalia', 'AMKennedy', 'CThomas','RBGinsburg', 'SGBreyer', 'JGRoberts', 'SAAlito', 'SSotomayor','EKagan']
 train_cols = ['issue','issueArea','lcDispositionDirection','petitioner','respondent']
@@ -42,7 +48,11 @@ def run(n=0, bigram=False):
     else:
         X = tfvecto(cur_df.facts_of_the_case)
 
-    if (n==2):
+    if (n==1 or n==2):
+        jn = pd.get_dummies(cur_df.justiceName, sparse=True)
+        A = sparse.coo_matrix(jn)
+        Q = sparse.hstack([X, A])
+        W = Q.tocsr()
         cross_v(X, cur_df)
         return
 
@@ -100,9 +110,9 @@ def cross_v(X, cur_df):
 def model (X, cur_df, train, test):
 
     model_RF = RandomForestClassifier(n_jobs=-2, n_estimators=80, max_features=None)
-    #model_KN = KNeighborsClassifier(n_jobs=-2, n_neighbors=10)
+    # model_KN = KNeighborsClassifier(n_jobs=-2, n_neighbors=10)
     # model_SVC = LinearSVC()
-    #model_Logistic = LogisticRegression()
+    # model_Logistic = LogisticRegression()
     modelo = model_RF
     t0 = time()
     print ('Fitting model...')
